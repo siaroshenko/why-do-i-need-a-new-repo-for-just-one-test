@@ -17,6 +17,7 @@ string[] StringsInput(int n)
         Console.Write($"Введите {i + 1}-ую строку: ");
         str[i] = Console.ReadLine();
     }
+    Console.Clear();
     PrintText("Ваш массив: ", str, n);
     return str;
 }
@@ -42,6 +43,7 @@ string[] Only3OrLessSymbols(string[] primaryArray, int n1)
     {
         while (primaryArray[j].Length > 3 && j <= n1) j++;
         resultArray[i] = primaryArray[j];
+        j++;
     }
     return resultArray;
 }
@@ -49,6 +51,7 @@ string[] Only3OrLessSymbols(string[] primaryArray, int n1)
 int n = Positive("введите количество строк в массиве: ");
 string[] str = StringsInput(n);
 string[] str2 = Only3OrLessSymbols(str, n);
+Console.WriteLine();
 PrintText("Новый массив: ", str2, str2.GetLength(0));
 
 // фукнция для ввода числа
